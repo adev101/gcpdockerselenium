@@ -2,5 +2,5 @@ FROM openjdk:12-alpine
 
 COPY ./ /
 
-RUN ["./mvnw", "package"]
+RUN ["./user/local/mvnw", "package"]
 CMD ["java","-cp","target/DockerSelenium-0.0.1-SNAPSHOT.jar","com.demo.test.test"]
