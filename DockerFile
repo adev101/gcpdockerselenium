@@ -2,5 +2,7 @@ FROM openjdk:12-alpine
 
 COPY ./ /
 
-RUN ["./user/local/mvnw", "package"]
+RUN chmod +x mvnw.cmd
+RUN chmod +x mvnw
+RUN ["./mvnw", "package"]
 CMD ["java","-cp","target/DockerSelenium-0.0.1-SNAPSHOT.jar","com.demo.test.test"]
