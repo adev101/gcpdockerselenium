@@ -23,7 +23,7 @@ public class home {
 	
 	public void getURL(int browser) throws IOException, InterruptedException {
 		
-		mode="local";
+		mode="remote";
 		
 		if(mode.contentEquals("local")) {
 			
@@ -52,19 +52,23 @@ public class home {
 			DesiredCapabilities dr=null;
 			dr=DesiredCapabilities.chrome();
 			dr.setBrowserName("chrome");
-			dr.setPlatform(Platform.LINUX);
-			dr.setVersion("81.0.4044.138");
+//			dr.setPlatform(Platform.LINUX);
+//			dr.setVersion("81.0.4044.138");
 			
+			System.out.println("Setting hub ip address");
 			//String hub=TestConfig.getConfigDetails().get("hub");
 			String hub="http://34.134.198.95:32369/wd/hub";
 			
 			System.setProperty("webdriver.chrome.driver", path+"//src//main//resources//drivers//chromedriver.exe");
 			driver=new RemoteWebDriver(new URL(hub),dr);
 			
+			System.out.println("Created driver object");
+			
 		}
 		
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		url="https://hale-carport-321118.el.r.appspot.com";
+		System.out.println(url);
 		driver.get(url);
 		driver.manage().window().maximize();
 		
