@@ -56,7 +56,7 @@ public class home {
 			dr.setVersion("81.0.4044.138");
 			
 			//String hub=TestConfig.getConfigDetails().get("hub");
-			String hub="http://192.168.99.100:4446/wd/hub";
+			String hub="http://34.134.198.95:32369/wd/hub";
 			
 			System.setProperty("webdriver.chrome.driver", path+"//src//main//resources//drivers//chromedriver.exe");
 			driver=new RemoteWebDriver(new URL(hub),dr);
